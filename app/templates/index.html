@@ -1,0 +1,23 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>What Cunt do you want to see on the Boat</h1>
+    <p>
+    <h4>The #1 rated cunt is, and always will be, <a href="{{ url_for('cunt', cuntname=most_hated.name) }}">{{ most_hated.name }}</a> with {{ '{0:,}'.format(most_hated.votes) }} votes.</h4>
+    </p>
+    <p>
+    Don't worry. We still have {{ remaining }} places on the boat<br>
+        Do you want to add another cunt to the Boat?
+    </p>
+    <form action="" method="post" name="Cunt">
+    {{ form.hidden_tag() }}
+    <table>
+    <tr>
+        <td>Enter the name of the Cunt</td>
+        <td>{{ form.cuntname(size=30) }}</td>
+        <td><input type="submit" value="Put the Cunt on the Boat"></td>
+    </tr>
+    </table>
+    </form>
+{% endblock %}

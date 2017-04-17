@@ -1,0 +1,28 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - Get on the Boat!!!</title>
+    {% else %}
+    <title>Get on the Boat!!!</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>Get on the Boat!!!:
+        <a href="{{ url_for('index') }}">Home</a>
+        | Search
+        | <a href="{{ url_for('who') }}">Who's on the Boat</a>
+        | <a href="{{ url_for('priority') }}"> Priority Boarding</a>
+    </div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>

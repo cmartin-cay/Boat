@@ -1,0 +1,21 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+{{ person.name }} is on the Boat because {{ person.dickhead.detail }} with
+    {{ '{0:,}'.format(person.votes) }} votes.
+    <br>
+    He currently is number {{ rank }} for Priority Boarding
+    <p></p>
+    <p></p>
+    {%  if request.method != 'POST' %}
+    <p>
+    <form action="" method="post" name="CuntVote">
+    <table>
+        <tr>Do you want to give {{ person.name }} priority boarding?    </tr>
+        <tr><input type="submit" value="Put the cunt further up the queue"> </tr>
+    </table>
+    </form>
+    </p>
+    {% endif %}
+{% endblock %}

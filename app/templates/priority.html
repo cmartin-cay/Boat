@@ -1,0 +1,15 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<table cellspacing="10">
+<th>Cunt</th>
+<th>Votes</th>
+    {% for cunt in cunts %}
+        <tr>
+            <td><a href="{{ url_for('cunt', cuntname=cunt.name) }}">{{ cunt.name }}</a></td>
+        <td>{{ '{0:,}'.format(cunt.votes) }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
