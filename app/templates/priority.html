@@ -2,14 +2,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<table cellspacing="10">
-<th>Cunt</th>
-<th>Votes</th>
-    {% for cunt in cunts %}
-        <tr>
-            <td><a href="{{ url_for('cunt', cuntname=cunt.name) }}">{{ cunt.name }}</a></td>
-        <td>{{ '{0:,}'.format(cunt.votes) }}</td>
-        </tr>
-    {% endfor %}
-</table>
+
+    <div class="container">
+    <div class="table">
+    <div class="row">
+    <div class="col-sm-4">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Cunt</th>
+                <th>Votes</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for cunt in cunts %}
+            <tr>
+                <td><a href="{{ url_for('cunt', cuntname=cunt.name) }}">{{ cunt.name }}</td>
+            <td>{{ '{0:,}'.format(cunt.votes) }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+</div>
 {% endblock %}
