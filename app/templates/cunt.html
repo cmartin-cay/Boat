@@ -7,11 +7,13 @@
             <h3>{{ person.name }} is on the Boat because {{ person.dickhead.detail }} with
             {{ '{0:,}'.format(person.votes) }} votes.</h3>
             <p>He is currently number {{ rank }} for Priority Boarding.</p>
+            {% if request.method != "POST" %}
             <p>Do you want to give {{ person.name }} priority boarding?</p>
             <form action="" method="post" role="form">
 
                 <button type="submit" class="btn btn-primary">Put the cunt further up the queue</button>
             </form>
+            {% endif %}
         </div>
     </div>
 
